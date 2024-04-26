@@ -17,4 +17,18 @@ func main() {
 	//Mostrammos una variable y su direccion de memoria usando el caracter &
 	fmt.Printf("el valor de la variable v es %v y su direccion de memoria es %v\n", v, &v)
 
+	byValue(v)
+	fmt.Printf("El valor fuera de la funcion byValue es %v\n", v)
+	byRef(&v)
+	fmt.Printf("El valor fuera de la funcion byValue es %v\n", v)
+
+}
+
+func byValue(num int) {
+	num = num + 1
+	fmt.Printf("El valor dentro de la funcion byRef es %v\n", num)
+}
+func byRef(num *int) {
+	*num = *num + 1
+	fmt.Printf("El valor dentro de la funcion byRef es %v\n", *num)
 }
